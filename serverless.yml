@@ -9,7 +9,7 @@ provider:
   deploymentBucket:
     name: deployment-bucket-paris
   env:
-    LOG: true
+    # LOG: true
 
 functions:
   geo:

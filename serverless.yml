@@ -5,8 +5,11 @@ provider:
   runtime: nodejs12.x
   stage: dev
   region: eu-west-3
+  memorySize: 512
   deploymentBucket:
     name: deployment-bucket-paris
+  env:
+    LOG: true
 
 functions:
   geo:

@@ -1,0 +1,17 @@
+service: utils-r3js-com
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: eu-west-3
+  deploymentBucket:
+    name: deployment-bucket-paris
+
+functions:
+  geo:
+    handler: handler.geo
+    events:
+      - http:
+          path: geo
+          method: get

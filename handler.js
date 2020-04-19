@@ -7,6 +7,8 @@ module.exports.geo = async event => {
   process.env.LOG && console.log('EVENT', JSON.stringify(event, null, 2));
 
   var geoData = geoip.lookup(event.requestContext.identity.sourceIp)
+  geoData.lat = geoData.ll[0]
+  geoData.lon = geoData.ll[1]
   var clientCurrency = geoData.country && countriesByAbbreviation[geoData.country]
 
   if (clientCurrency) {
